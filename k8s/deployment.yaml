@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app-deployment
+  namespace: gtsitlaouri-priv
+  labels:
+    app: weather-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-app
+  template:
+    metadata:
+      labels:
+        app: weather-app
+    spec:
+      containers:
+        - name: weather-app
+          image: giwrgostst/weather-app:latest
+          imagePullPolicy: Always   # για να τραβήσει τη νεότερη έκδοση
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: DEPLOYMENT_NAME
+              value: "weather-app-deployment"
+            - name: NODE_ENV
+              value: "production"
