@@ -20,7 +20,6 @@ A cloud-native Weather Forecast application demonstrating automatic, demand-driv
 ├── package.json
 ├── server.js
 ├── index.html
-├── .dockerignore
 │
 ├── k8s/
 │   ├── deployment.yaml
