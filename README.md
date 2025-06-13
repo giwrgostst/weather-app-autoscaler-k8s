@@ -51,14 +51,9 @@ docker push giwrgostst/weather-app:latest
    kubectl apply -f k8s/deployment.yaml       -n gtsitlaouri-priv
    kubectl apply -f k8s/service.yaml          -n gtsitlaouri-priv
    kubectl apply -f k8s/rbac-scalers.yaml     -n gtsitlaouri-priv
-   ```
-
-2. (Optional) Enable HPA
-
-   ```sh
    kubectl apply -f k8s/hpa.yaml              -n gtsitlaouri-priv
    ```
-
+   
 ## 🎬 Usage
 
 1. **Access the UI**  
